@@ -1,2 +1,2 @@
 # pythonpractice
-Python practice projects
+Python practice projects that are in progress, complete or forgotten.
