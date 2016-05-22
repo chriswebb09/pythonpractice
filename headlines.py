@@ -4,7 +4,7 @@
 
 import requests
 import re
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 TAG_RE = re.compile(r'<[^>]+>')
 
@@ -15,7 +15,7 @@ def get_webdata(url):
 
 
 def soupify_data(data):
-    soup = BeautifulSoup(data)
+    soup = BeautifulSoup(data, "html.parser")
     soup_list = soup.findAll(attrs={'class': 'titletext'})
     return soup_list
 
@@ -32,4 +32,4 @@ if __name__ == "__main__":
     news_items = remove_tags(soup_news)
     news_list = news_items.split(",")
     for item in news_list:
-        print item
+        print(item)
